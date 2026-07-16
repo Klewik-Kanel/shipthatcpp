@@ -1,9 +1,10 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
-    int32_t w{0}, h{0};
-    cin >> w >> h;
-    cout << w*h << endl;
+    string s;
+    getline(cin, s);
+    for(int i = s.size() - 1; i >=0; i--) cout << s[i];
     return 0;
 }
