@@ -2,14 +2,13 @@
 #include <string>
 using namespace std;
 
+int square(int n){
+    long long result = n*n;
+    return result;
+}
 int main() {
-    int n{0}, total{0};
-
+    int n;
     cin >> n;
-    for(int i = 1; i<=n; i++){
-        total += i;
-    }
-    cout<< total<<endl;
-
+    cout << square(n) << endl;
     return 0;
 }
