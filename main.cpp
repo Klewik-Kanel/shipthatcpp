@@ -1,6 +1,7 @@
 #include <iostream>
+using namespace std;
 
 int main() {
-    // Print the greeting below.
+    cout<< "Hello, C++!"<<endl;// Print the greeting below.
     return 0;
 }
