@@ -2,13 +2,16 @@
 #include <string>
 using namespace std;
 
-int square(int n){
-    long long result = n*n;
-    return result;
+void swap(int& a, int& b){
+    int temp = a;
+    a = b;
+    b = temp;
 }
+
 int main() {
-    int n;
-    cin >> n;
-    cout << square(n) << endl;
+    int n{0}, m{0};
+    cin>> n >> m;
+    swap(n, m);
+    cout<< n << " " << m <<endl;
     return 0;
 }
