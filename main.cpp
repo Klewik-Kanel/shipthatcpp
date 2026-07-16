@@ -3,17 +3,13 @@
 using namespace std;
 
 int main() {
-    int n{0};
+    int n{0}, total{0};
+
     cin >> n;
-    if( n%15 == 0 ){
-        cout<< "FizzBuzz" << endl;
-    } else if(n%3 == 0){
-        cout<< "Fizz"<<endl;
-    } else if(n%5 == 0){
-        cout<<"Buzz"<<endl;
-    } else{
-        cout<< n <<endl;
+    for(int i = 1; i<=n; i++){
+        total += i;
     }
+    cout<< total<<endl;
 
     return 0;
 }
