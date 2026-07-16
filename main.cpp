@@ -2,6 +2,8 @@
 using namespace std;
 
 int main() {
-    cout<< "Hello, C++!"<<endl;// Print the greeting below.
+    int32_t a{0}, b{0};
+    cin >> a >> b;
+    cout << a + b << endl;
     return 0;
 }
