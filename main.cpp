@@ -3,11 +3,17 @@
 using namespace std;
 
 int main() {
-    string name;
-    int16_t age;
-    getline(cin, name);
-    cin>> age;
-    cout<< "Hi, "<<name<<"!"<<" You are "<<age<<" years old."<<endl;
-    return 0; 
+    int32_t n{0};
+    cin >> n;
+    if(n/15 == 0 ){
+        cout<< "FizzBuzz" << endl;
+    } else if(n/3 == 0){
+        cout<< " Fizz"<<endl;
+    } else if(n/5 == 0){
+        cout<<"Buzz"<<endl;
+    } else{
+        cout<< n <<endl;
+    }
 
+    return 0;
 }
