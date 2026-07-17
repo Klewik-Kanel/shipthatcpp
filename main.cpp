@@ -1,17 +1,16 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-void swap(int& a, int& b){
-    int temp = a;
-    a = b;
-    b = temp;
-}
-
 int main() {
-    int n{0}, m{0};
-    cin>> n >> m;
-    swap(n, m);
-    cout<< n << " " << m <<endl;
-    return 0;
+    vector<int> num;
+    int x{0};
+    while(cin>>x){
+        num.push_back(x);
+    }
+
+    int max = *max_element(num.begin(), num.end());
+
 }
