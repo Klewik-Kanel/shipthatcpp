@@ -2,15 +2,14 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <map>
+#include <unordered_set>
+
 using namespace std;
 
 int main() {
-    vector<int> num;
-    int x{0};
-    while(cin>>x){
-        num.push_back(x);
-    }
-
-    int max = *max_element(num.begin(), num.end());
-    cout<< max;
+    unordered_set<string> seen;
+    string s;
+    while(cin >> s) seen.insert(s);
+    cout<< seen.size();
 }
