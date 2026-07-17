@@ -12,5 +12,5 @@ int main() {
     }
 
     int max = *max_element(num.begin(), num.end());
-
+    cout<< max;
 }
