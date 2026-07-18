@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iomanip>
 #include <algorithm>
 #include <numeric>
 #include <map>
@@ -8,31 +9,42 @@
 
 using namespace std;
 
-class Rectangle{
-    private :
-        int width{0}, height{0};
-    
+class Shape{
     public :
-        Rectangle(int w, int h) : width{w}, height{h} {}
+        virtual double area() const = 0;
+        virtual ~Shape() = default;
+};
 
-        int getW() const{ return width;}
-        int getH() const{ return height;}
+class Square: public Shape{
+    double side;
 
-        int area (const Rectangle&) const{
-            return width*height;
+    public:
+        Square(double s) : side{s}{}
+        double area() const{
+            return side * side ;
         }
+};
 
-        int perimeter(const Rectangle&) const{
-            return 2*(width+height);
+class Circle: public Shape{
+    double r;
+    public:
+        Circle(double r_) : r{r_} {}
+        double area() const{
+            return 3.14159 * r * r;
         }
-
 };
 
 int main() {
-    int x{0}, y{0};
-    cin>> x >> y;
-    Rectangle r{x, y};
-    cout<< "area: " << r.area(r)<< endl;
-    cout<< "perimeter: " << r.perimeter(r)<< endl;
+    double s{0}, r{0};
+    cin>>s>>r;
+    Shape* ptr1,* ptr2;
+    ptr1 = new Square(s);
+    ptr2 = new Circle(r);
+    cout<< fixed << setprecision(2);
+    cout<< ptr1->area()<<endl;
+    delete ptr1;
+    cout<< ptr2->area()<<endl;
+    delete ptr2;
+
 
 }
