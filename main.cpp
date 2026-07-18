@@ -9,42 +9,16 @@
 
 using namespace std;
 
-class Shape{
-    public :
-        virtual double area() const = 0;
-        virtual ~Shape() = default;
-};
-
-class Square: public Shape{
-    double side;
-
-    public:
-        Square(double s) : side{s}{}
-        double area() const{
-            return side * side ;
-        }
-};
-
-class Circle: public Shape{
-    double r;
-    public:
-        Circle(double r_) : r{r_} {}
-        double area() const{
-            return 3.14159 * r * r;
-        }
-};
+template <typename T>
+auto sumPair(T a, T b){
+    return a+b;
+}
 
 int main() {
-    double s{0}, r{0};
-    cin>>s>>r;
-    Shape* ptr1,* ptr2;
-    ptr1 = new Square(s);
-    ptr2 = new Circle(r);
-    cout<< fixed << setprecision(2);
-    cout<< ptr1->area()<<endl;
-    delete ptr1;
-    cout<< ptr2->area()<<endl;
-    delete ptr2;
+    int a{0}, b{0};
+    double p{0}, q{0};
+    cin>>a>>b>>p>>q;
 
-
+    cout<<sumPair(a,b)<<endl;
+    cout<<std::fixed << std::setprecision(2)<<sumPair(p,q)<<endl;
 }
