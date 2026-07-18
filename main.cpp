@@ -8,13 +8,31 @@
 
 using namespace std;
 
+class Rectangle{
+    private :
+        int width{0}, height{0};
+    
+    public :
+        Rectangle(int w, int h) : width{w}, height{h} {}
+
+        int getW() const{ return width;}
+        int getH() const{ return height;}
+
+        int area (const Rectangle&) const{
+            return width*height;
+        }
+
+        int perimeter(const Rectangle&) const{
+            return 2*(width+height);
+        }
+
+};
+
 int main() {
-    vector<int> nums;
-    int x{0};
-    while(cin >> x) nums.push_back(x);
-    long long total = accumulate(nums.begin(), nums.end(),0LL,[](long long acc, int x){
-        return x%2 == 0 ? acc + 1LL*x*x : acc;
-    });
-    cout<< total;
-    return 0;
+    int x{0}, y{0};
+    cin>> x >> y;
+    Rectangle r{x, y};
+    cout<< "area: " << r.area(r)<< endl;
+    cout<< "perimeter: " << r.perimeter(r)<< endl;
+
 }
